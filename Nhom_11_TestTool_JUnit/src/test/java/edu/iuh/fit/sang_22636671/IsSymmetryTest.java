@@ -40,6 +40,26 @@ class IsSymmetryTest {
     }
 
     @Test
+    @DisplayName("TC3: Mảng có phần tử số thực")
+    void testInvalidArray_Float_TC3() {
+         int[] a = {1, 2.2, 1}; // Lỗi biên dịch
+         int n = 3;
+        // Expected: Exception
+
+        // Ghi chú: TC3 là lỗi biên dịch, không phải lỗi runtime.
+        // Java không cho phép gán giá trị 2.2 (số thực) vào mảng int[].
+
+        /*
+        // Đây là assert mong muốn, nhưng nó sẽ không biên dịch:
+        assertThrows(Exception.class, () -> {
+            // Lỗi: "double cannot be converted to int"
+            // int[] a_invalid = {1, 2.2, 1};
+            // isSymmetry.isSymmetry(a_invalid, n);
+        }, "TC3: Mong đợi lỗi do mảng chứa số thực");
+        */
+        System.out.println("TC3: Không thể test runtime - Lỗi biên dịch (Mảng chứa số thực)");
+    }
+    @Test
     @DisplayName("TC3-TC7: Lỗi biên dịch (Invalid Type)")
     void testInvalidTypes_CompileErrors() {
         // Ghi chú: TC3, TC4, TC5, TC6, TC7 không thể test bằng JUnit.
