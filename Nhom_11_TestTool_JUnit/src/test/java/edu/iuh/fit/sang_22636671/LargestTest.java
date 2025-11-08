@@ -22,9 +22,6 @@ public class LargestTest {
 
         int actualResult = largest.Largest(numbers);
 
-        // Test này sẽ FAIL!
-        // Expected: 9
-        // Actual: 2147483647 (vì logic code sai)
         assertEquals(expectedResult, actualResult);
     }
 
@@ -32,13 +29,32 @@ public class LargestTest {
     @DisplayName("TC2: Mảng rỗng")
     void testValidPartition_TC2_EmptyArray() {
         int[] numbers = {};
-        // Bạn mong đợi 2147483647
-        int expectedResult = 2147483647; // Chính là Integer.MAX_VALUE
+
+        int expectedResult = 2147483647;
 
         int actualResult = largest.Largest(numbers);
 
-        // Test này sẽ PASS!
-        // Vì hàm của bạn trả về giá trị khởi tạo khi mảng rỗng
         assertEquals(expectedResult, actualResult);
     }
+
+//    @Test
+//    @DisplayName("TC3: Mảng chứa số thực (Invalid Partition)")
+//    void testInvalidPartition_TC3_ContainsFloat() {
+//         int[] numbers = {5, 1, 2, 7, 9.3, 3, 5, 6};
+//         String expectedResult = "Exception";
+//         int actualResult = largest.Largest(numbers);
+//
+//        assertEquals(expectedResult, actualResult);
+//
+//    }
+//
+//    @Test
+//    @DisplayName("TC4: Mảng chứa ký tự (Invalid Partition)")
+//    void testInvalidPartition_TC4_ContainsString() {
+//        int[] numbers = {5, 1, 2, 7, 9, "abc", 5, 6};
+//
+//        String expectedResult = "Exception";
+//        int actualResult = largest.Largest(numbers);
+//        assertEquals(expectedResult, actualResult);
+//    }
 }
